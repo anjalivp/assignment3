@@ -134,7 +134,9 @@ app.delete('/api/remove/:id',(req,res)=>{
 
    
 
-app.listen(port, function(){
-  console.log('listening to port');
-});
+// app.listen(port, function(){
+//   console.log('listening to port');
+// });
 
+
+app.listen(process.env.PORT || port)
