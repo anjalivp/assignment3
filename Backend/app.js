@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 var bodyparser=require('body-parser');
 const User = require('./src/model/user');
 const path = require('path');
-const port = process.env.PORT || 8080;
+// const port = process.env.PORT || 8080;
 var app = new express();
 app.use(cors());
 app.use(bodyparser.json());
@@ -134,7 +134,7 @@ app.get('/*', function(req, res) {
  });
   
 
-app.listen(port, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log('listening to port');
 });
 
