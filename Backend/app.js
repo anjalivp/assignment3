@@ -11,9 +11,6 @@ app.use(cors());
 app.use(bodyparser.json());
 app.use(express.static('./dist/Frontend'));
 
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/Frontend/index.html'))
- });
 
 
 
@@ -132,7 +129,10 @@ app.delete('/api/remove/:id',(req,res)=>{
 
 });
 
-   
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname + '/dist/Frontend/index.html'))
+ });
+  
 
 app.listen(port, function(){
   console.log('listening to port');
